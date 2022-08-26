@@ -1,0 +1,15 @@
+.idea/
+__pycache__/
+*.pyc
+tensorly/
+sparse/
+tensorly-sparse/
+stats/
+config/*
+!config/default.yaml
+Stats/
+pyagnn/data/*
+
+.ipynb_checkpoints/
+
+transformer/
