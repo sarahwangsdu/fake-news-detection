@@ -1,0 +1,57 @@
+dataset:
+  type: folder # in [folder, csv, pickle]
+  dataset_path: ../Dataset/fakenewsdata1/Public Data
+  dataset_name: Buzzfeed Political News Dataset
+  sentence_based:
+    dataset_path: ../Dataset/Politifact/dataset.pkl
+  csv:
+    uid: 0 # index 0
+    title: 1
+    content: 3
+    label: 4
+
+
+paths:
+  GloVe_adress: glove.6B/glove.6B.100d.txt
+  encoder_path: transformer/model/encoder_bpe_40000.json
+  bpe_path: transformer/model/vocab_40000.bpe
+
+embedding:
+  # Parafac - LDA - GloVe - Transformer -
+  method_decomposition_embedding: GloVe
+  method_embedding_glove: mean
+  rank_parafac_decomposition: 10
+  size_word_co_occurrence_window: 5
+  use_frequency: Yes
+  vocab_size: -1
+  vocab_util_pourcentage: 1
+
+graph:
+  num_nearest_neighbours: 5
+  node_features: Glove
+  sentence_based: No  # If Yes, graph is split into sentences
+  method_create_graph: None
+
+stats:
+  ratio_labeled: 0.05
+  iteration_stat: 20
+  pourcentage_know: [2, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+  pourcentage_voisin: [1, 2, 3, 4, 5, 6 ,7, 8, 9, 10, 15]
+  ratios: [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
+  methods_1: ["decomposition", "GloVe", "Transformer"]
+  layers_test: [2, 3, 4]
+  num_unknown_labels: 5
+
+
+learning:
+  method_learning: AGNN # FaBP, GCN, AGNN, SVM, RF (random forest)
+  cuda: No
+  hidden: 16
+  dropout: 0.5
+  lr: 0.01
+  weight_decay: 0.0005
+  fastmode: No
+  epochs: 1000
+  layers: 2
+  save_model: No
+  ratio_val: 0.20
