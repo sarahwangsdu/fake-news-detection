@@ -1,0 +1,9 @@
+nltk
+tensorly
+numpy
+scikit-learn
+torch
+spacy
+ftfy
+bs4
+requests
