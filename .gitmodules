@@ -1,3 +1,6 @@
 [submodule "sparse"]
 	path = sparse
 	url = https://github.com/sarahwangsdu/sparse.git
+[submodule "tensorly-sparse"]
+	path = tensorly-sparse
+	url = https://github.com/sarahwangsdu/tensorly-sparse.git
