@@ -1,0 +1,3 @@
+[submodule "sparse"]
+	path = sparse
+	url = https://github.com/sarahwangsdu/sparse.git
